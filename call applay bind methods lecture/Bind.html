@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="interduce"> Interduce to me</button>
+    <script>
+        const raju={
+            name:"raju",
+            age:28,
+            print: function(){
+                console.log(`your a ${this.name}, and your age is ${this.age}`)
+            },
+            print2: function(){
+                console.log(` ${this.name}, and your  ${this.age}`)
+            }
+        }
+        const ele=document.getElementById("interduce");
+        // ele.addEventListener("click",function(){
+        //     raju.print();
+        // })
+        // ele.addEventListener("dblclick", ()=>{
+        //     raju.print2();
+        // })
+
+        // applaying bind in event lestiner
+        ele.addEventListener("click",raju.print.bind(raju));
+
+        const sai={
+            name:"sai",
+            age:10
+        }
+        const saiintro=raju.print.bind(sai);
+        // ele.addEventListener("dblclick", raju.print.bind(sai));
+        ele.addEventListener("dblclick",saiintro);
+
+    </script>
+</body>
+</html>
